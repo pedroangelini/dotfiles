@@ -119,6 +119,23 @@
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2019",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "backgroundImage": "%USERPROFILE%\\OneDrive\\Imagens\\backgrounds\\git.png",
+                "backgroundImageOpacity": 0.57000000000000006,
+                "colorScheme": "Tango Dark",
+                "font": {
+                    "face": "Fira Code Retina",
+                    "size": 11
+                },
+                "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
+                "hidden": false,
+                "intenseTextStyle": "none",
+                "name": "Git Bash",
+                "opacity": 81,
+                "source": "Git",
+                "startingDirectory": "%USERPROFILE%/dev",
+                "useAcrylic": true
             }
         ]
     },
