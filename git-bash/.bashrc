@@ -44,6 +44,21 @@ fi
 
 unset env
 
+
+# AUTOCOMPLETION
+######################
+# If there are multiple matches for completion, Tab should cycle through them
+bind 'TAB:menu-complete'
+# And Shift-Tab should cycle backwards
+bind '"\e[Z": menu-complete-backward'
+# Display a list of the matching files
+bind "set show-all-if-ambiguous on"
+# Autocomplete with the first valid completion, not only the common characters
+bind "set menu-complete-display-prefix off"
+# Ignore case for completion
+bind "set completion-ignore-case on"
+
+
 # ALIASES and color
 ################################
 
@@ -53,10 +68,11 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -ahlF'
-alias la='ls -A'
-alias l='ls -CF'
+#alias ll='ls -ahlF'
+#alias la='ls -A'
+#alias l='ls -CF'
 
+TERM=cygwin
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -70,6 +86,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+source ~/.bash_aliases
+
 
 # Starship Prompt
 # bin file is in /c/Users/pedro/.starship_prompt
@@ -79,3 +97,11 @@ eval "$(starship init bash)"
 
 # bat installation
 addToPATH /c/Users/pedro/AppData/Local/bat
+
+# office folder
+addToPATH /c/Program\ Files/Microsoft\ Office/root/Office16/
+
+source ~/.config/fzfconfigs.sh
+
+# zoxide
+eval "$(zoxide init bash)"
