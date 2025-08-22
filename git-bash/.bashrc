@@ -59,6 +59,18 @@ bind "set menu-complete-display-prefix off"
 bind "set completion-ignore-case on"
 
 
+# Other random options
+##########################
+shopt -s autocd # no need to type cd
+
+# append history and reload automatically after each
+HISTSIZE=100000
+HISTFILESIZE=$HISTSIZE
+HISTCONTROL=ignorespace:ignoredups
+shopt -s histappend
+PROMPT_COMMAND="history -a;history -c;history -r;$PROMPT_COMMAND"
+
+
 # ALIASES and color
 ################################
 
