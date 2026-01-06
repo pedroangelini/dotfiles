@@ -93,6 +93,9 @@ alias la='ls -A'
 alias l='ls -CF'
 
 
+# local bin folder in path
+export PATH="$PATH:/home/pedro/.local/bin"
+
 # LS Colors
 . "/home/pedro/.local/share/lscolors.sh"
 
@@ -105,8 +108,14 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.config/.bash_aliases ]; then
+    . ~/.config/.bash_aliases
+fi
+
+
+# Go Lang configs
+if [ -f ~/.config/.gorc ]; then
+    . ~/.config/.gorc
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -120,13 +129,25 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# pyenv configs
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
-# if [ -f "which powerline-daemon" ]; then 
-#     powerline-daemon -q POWERLINE_BASH_CONTINUATION=1 POWERLINE_BASH_SELECT=1
-# else
-#     . /usr/share/powerline/integrations/powerline.sh 
-# fi
+
+#dprint
+export DPRINT_INSTALL="/home/pedro/.dprint"
+export PATH="$DPRINT_INSTALL/bin:$PATH"
 
 # Starship Prompt
 eval "$(starship init bash)"
+
 . "$HOME/.cargo/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# fzf
+. ~/.config/fzfconfigs.sh
+
