@@ -75,10 +75,11 @@
                 "backgroundImage": "%USERPROFILE%/OneDrive/Imagens/backgrounds/Windows Dark.png",
                 "backgroundImageOpacity": 0.8,
                 "cursorShape": "bar",
-                "experimental.retroTerminalEffect": false,
+                "experimental.retroTerminalEffect": true,
                 "font": 
                 {
-                    "face": "Cascadia Mono PL"
+                    "face": "Cascadia Mono PL",
+                    "size": 13
                 },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
@@ -100,7 +101,8 @@
                 "experimental.retroTerminalEffect": false,
                 "font": 
                 {
-                    "face": "Fira Code"
+                    "face": "Fira Code",
+                    "size": 11
                 },
                 "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
                 "hidden": false,
@@ -155,15 +157,49 @@
                 "intenseTextStyle": "none",
                 "name": "Git Bash",
                 "opacity": 81,
+                "rightClickContextMenu": true,
+                "showMarksOnScrollbar": true,
                 "source": "Git",
                 "startingDirectory": "%USERPROFILE%/dev",
                 "useAcrylic": true
             },
             {
                 "guid": "{f7878390-f519-5616-b452-f2721280898a}",
-                "hidden": false,
+                "hidden": true,
                 "name": "podman-machine-default",
-                "source": "Microsoft.WSL"
+                "source": "Microsoft.WSL",
+                "tabTitle": "podman vm"
+            },
+            {
+                "adjustIndistinguishableColors": "always",
+                "antialiasingMode": "cleartype",
+                "autoMarkPrompts": false,
+                "backgroundImage": "%USERPROFILE%/OneDrive/Imagens/backgrounds/1032105-widescreen-spaceship-background-3840x2160-picture-dark.jpg",
+                "backgroundImageOpacity": 0.95,
+                "colorScheme": "Tango Dark",
+                "commandline": "\"C:\\Windows\\System32\\OpenSSH\\ssh.exe\" space-monster",
+                "experimental.rainbowSuggestions": false,
+                "experimental.retroTerminalEffect": false,
+                "font": 
+                {
+                    "face": "FiraCode Nerd Font",
+                    "size": 11
+                },
+                "guid": "{10de35e9-877a-4bed-988c-59b69e1dcb99}",
+                "hidden": false,
+                "icon": "C:\\Users\\pedro\\OneDrive\\Imagens\\icons\\space-station.png",
+                "intenseTextStyle": "bright",
+                "name": "Space Monster",
+                "opacity": 81,
+                "rightClickContextMenu": true,
+                "showMarksOnScrollbar": false,
+                "startingDirectory": "%USERPROFILE%",
+                "unfocusedAppearance": 
+                {
+                    "backgroundImageOpacity": 0.9,
+                    "intenseTextStyle": "all"
+                },
+                "useAcrylic": false
             }
         ]
     },
