@@ -87,35 +87,21 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-
 # local bin folder in path
 export PATH="$PATH:/home/pedro/.local/bin"
-
-# LS Colors
-. "/home/pedro/.local/share/lscolors.sh"
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.config/.bash_aliases ]; then
-    . ~/.config/.bash_aliases
+if [ -f ~/.config/aliases.sh ]; then
+    . ~/.config/aliases.sh
 fi
 
-
-# Go Lang configs
-if [ -f ~/.config/.gorc ]; then
-    . ~/.config/.gorc
+# tool specific configs are sourced from an outside file
+if [ -f ~/.config/tool_rcs.sh ]; then
+    . ~/.config/tool_rcs.sh
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -128,26 +114,4 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# pyenv configs
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-
-#dprint
-export DPRINT_INSTALL="/home/pedro/.dprint"
-export PATH="$DPRINT_INSTALL/bin:$PATH"
-
-# Starship Prompt
-eval "$(starship init bash)"
-
-. "$HOME/.cargo/env"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# fzf
-. ~/.config/fzfconfigs.sh
 
