@@ -1,0 +1,7 @@
+[user]
+	name = Pedro Angelini
+	email = 72536471+pedroangelini@users.noreply.github.com
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
