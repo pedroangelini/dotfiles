@@ -87,26 +87,21 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-
-# LS Colors
-. "/home/pedro/.local/share/lscolors.sh"
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+# local bin folder in path
+export PATH="$PATH:/home/pedro/.local/bin"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.config/aliases.sh ]; then
+    . ~/.config/aliases.sh
+fi
+
+# tool specific configs are sourced from an outside file
+if [ -f ~/.config/tool_rcs.sh ]; then
+    . ~/.config/tool_rcs.sh
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -120,13 +115,3 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-# if [ -f "which powerline-daemon" ]; then 
-#     powerline-daemon -q POWERLINE_BASH_CONTINUATION=1 POWERLINE_BASH_SELECT=1
-# else
-#     . /usr/share/powerline/integrations/powerline.sh 
-# fi
-
-# Starship Prompt
-eval "$(starship init bash)"
-. "$HOME/.cargo/env"
